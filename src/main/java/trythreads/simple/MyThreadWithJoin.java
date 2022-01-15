@@ -1,6 +1,6 @@
 package trythreads.simple;
 
-public class MyThread3A implements Runnable {
+public class MyThreadWithJoin implements Runnable {
 
 	private int counter = 0;
 	
@@ -20,7 +20,7 @@ public class MyThread3A implements Runnable {
 
 	public static void main(String[] args) {
 		
-		Runnable objRunnable = new MyThread3A();
+		Runnable objRunnable = new MyThreadWithJoin();
 		Thread th = new Thread(objRunnable);
 		th.start();   // start thread
 		
@@ -30,10 +30,19 @@ public class MyThread3A implements Runnable {
 						Thread.currentThread().getName(), i);
 		}
 		
-		int counter = ((MyThread3B) objRunnable).getCounter();
-		System.out.format("TOTAL: %d\n", counter);
+		//
+		// int counter = ((MyThread3A) objRunnable).getCounter();
+		// System.out.format("TOTAL: %d\n", counter);
 		
-				
+		try {
+			// wait for finishing thread
+			th.join();
+			int counter = ((MyThreadWithJoin) objRunnable).getCounter();
+			System.out.format("TOTAL RESULT COUNTER: %d\n", counter);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 }

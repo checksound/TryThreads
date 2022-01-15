@@ -1,6 +1,6 @@
 package trythreads.simple;
 
-public class MyThread2 implements Runnable {
+public class MyThreadRunnable implements Runnable {
 
 	@Override
 	public void run() {
@@ -14,7 +14,7 @@ public class MyThread2 implements Runnable {
 
 	public static void main(String[] args) {
 		
-		Thread th = new Thread(new MyThread2());
+		Thread th = new Thread(new MyThreadRunnable());
 		th.start();   // start thread
 		
 		for (int i = 0; i < Integer.MAX_VALUE; i ++) {

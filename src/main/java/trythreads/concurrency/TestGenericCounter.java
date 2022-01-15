@@ -2,7 +2,7 @@ package trythreads.concurrency;
 
 import java.util.Locale;
 
-public class TestCounterGeneric {
+public class TestGenericCounter {
 	
 	private static void testCounter(Counter counter) 
 			throws InterruptedException {
