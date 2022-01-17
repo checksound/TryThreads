@@ -49,7 +49,15 @@ Esempio della palla che rimbalza [bounce.Bounce](./src/main/java/bounce/Bounce.j
 
 Se si manda in esecuzione il programma, la palla si muove, ma prende il controllo di tutta l'applicazione. Se si volesse fermare l'applicazione prima che il moto della palla sia finito e si clicca sul pulsate _Close_, la palla continua a muoversi comunque. Non si può interagire con il programma finché la palla non ha terminato di muoversi.
 
-Rendiamo l'esempio della palla che rimbalza più responsive eseguendo il codice che muove la palla in un thread separato. Infatti, così siamo in grado di eseguire il lancio di più palle, ognuna mossa dal proprio thread. In aggiunta, il thread di _dispatch degli eventi_ continuerà l'esecuzione in parallelo, occupandosi di gestire gli eventi della user interface. In questo modo dato che  ogni thread viene eseguito 'contemporaneamente', anche il thread che gestisce l'_event dipatch_, ha l'opportunità di accorgersi che l'utente clicca sul bottone _Close_ mentre le palle stanno rimbalzando. Esempio: [bounceThread.BounceThread](./src/main/java/bounceThread/BounceThread.java)
+Rendiamo l'esempio della palla che rimbalza più responsive eseguendo il codice che muove la palla in un thread separato. Infatti, così siamo in grado di eseguire il lancio di più palle, ognuna mossa dal proprio thread. In aggiunta, il thread di _dispatch degli eventi_ continuerà l'esecuzione in parallelo, occupandosi di gestire gli eventi della user interface. In questo modo dato che  ogni thread viene eseguito 'contemporaneamente', anche il thread che gestisce l'_event dipatch_, ha l'opportunità di accorgersi che l'utente clicca sul bottone _Close_ mentre le palle stanno rimbalzando. 
+
+Esempio: [bounceThread.BounceThread](./src/main/java/bounceThread/BounceThread.java)
+
+## Interruzione dei thread
+
+Il metodo `interrupt` può essere utilizzato per richiedere il termine di un thread.
+
+Vedi esempio [bounceThread.BounceThreadWithStop](./src/main/java/bounceThread/BounceThreadWithStop.java) con bottone di Stop per terminare i thread in esecuzione.
          
 ## Accesso a variabili condivise
 
