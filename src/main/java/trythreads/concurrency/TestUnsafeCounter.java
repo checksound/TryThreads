@@ -6,6 +6,8 @@ public class TestUnsafeCounter {
 
 	public static void main(String[] args) throws InterruptedException {
 		
+		long startTime = System.currentTimeMillis();
+		
 		Counter counter = new CounterUnsafe();
 		
 		int incrementValue1 = 200_000_000;
@@ -24,6 +26,8 @@ public class TestUnsafeCounter {
 		incrementer2.join();
 		
 		int counterValue = counter.getValue();
+		
+		long timeElapsed = System.currentTimeMillis() - startTime;
 				
 		System.out.format(Locale.ITALIAN, "SUM VALUE: %,d - SHOULD BE: %,d\n", 
 				counterValue, 
@@ -36,6 +40,10 @@ public class TestUnsafeCounter {
 		
 		System.out.format(Locale.ITALIAN, 
 				"DEFFERENCE: %,d - DIFF: %f %%\n", difference, percent);
+		
+		System.out.format(Locale.ITALIAN, 
+				"FINISHED Counter UNSAFE, elapsed time: %,d ms\n", 
+				timeElapsed);
 	}
 
 }

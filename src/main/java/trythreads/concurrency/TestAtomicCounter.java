@@ -2,13 +2,12 @@ package trythreads.concurrency;
 
 import java.util.Locale;
 
-public class TestSafeCounter {
+public class TestAtomicCounter {
 
 	public static void main(String[] args) throws InterruptedException {
-		
 		long startTime = System.currentTimeMillis();
 		
-		Counter counter = new CounterSafe();
+		Counter counter = new CounterAtomic();
 		
 		int incrementValue1 = 200_000_000;
 		int incrementValue2 = 100_000_000;
@@ -28,7 +27,7 @@ public class TestSafeCounter {
 		int counterValue = counter.getValue();
 		
 		long timeElapsed = System.currentTimeMillis() - startTime;
-				
+		
 		System.out.format(Locale.ITALIAN, "SUM VALUE: %,d - SHOULD BE: %,d\n", 
 				counterValue, 
 				(incrementValue1 + incrementValue2));
@@ -40,10 +39,12 @@ public class TestSafeCounter {
 		
 		System.out.format(Locale.ITALIAN, 
 				"DEFFERENCE: %,d - DIFF: %f %%", difference, percent);
-	
+		
 		System.out.format(Locale.ITALIAN, 
-				"FINISHED Counter SAFE, elapsed time: %,d ms\n", 
+				"FINISHED Counter ATOMIC, elapsed time: %,d ms\n", 
 				timeElapsed);
+	
+
 	}
 
 }
