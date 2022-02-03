@@ -126,4 +126,5 @@ DEFFERENCE: 0 - DIFF: 0,000000 %
 FINISHED Counter SYNCHRONIZED, elapsed time: 8.412 ms
 ```
 
-Mie modifiche
+## Operazioni Atomiche
+
