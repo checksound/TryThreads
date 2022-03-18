@@ -14,6 +14,10 @@ La classe [trythreads.simple.MyThreadWithoutJoin](./src/main/java/trythreads/sim
 
 La classe [trythreads.simple.MyThreadWithJoin](./src/main/java/trythreads/simple/MyThreadWithJoin.java) esecuzione di un thread che esegue l'incremento di un contatore, mentre il main invocando il metodo `join` del thread aspetta il termine dell'esecuzione del thread.
 
+Esempio di utilizzo delle primitive dei thread: `join()`, `sleep()`, `isAlive()`, `interrupt()`: [trythreads.simple.SimpleThreads](./src/main/java/trythreads/simple/SimpleThreads.java).
+
+Vedi differenza per il semplice utilizzo di `Thread.sleeep()`: [trythreads.simple.SleepMessages](./src/main/java/trythreads/simple/SleepMessages.java).
+
 ## Animazione
 
 Innanzitutto, tutti i componenenti grafici delle Swing devono essere configurati dal thread che gestisce l'_event dispatch_, il thread di controllo che passa gli eventi come il click del mouse e il digitare dei tasti ai componenti della user interface.
@@ -33,7 +37,7 @@ EventQueue.invokeLater(new Runnable()
 
 Nel nostro esempio:
 
-```javaa
+```java
 EventQueue.invokeLater(new Runnable()
          {
             public void run()

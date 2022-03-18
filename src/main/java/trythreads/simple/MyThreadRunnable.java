@@ -13,8 +13,14 @@ public class MyThreadRunnable implements Runnable {
 	}
 
 	public static void main(String[] args) {
-		
-		Thread th = new Thread(new MyThreadRunnable());
+		Thread th = new Thread(() -> {
+			for (int i = 0; i < Integer.MAX_VALUE; i ++) {
+				if(i % 1_000_000 == 0)
+					System.out.format("In thread: %s - counter: %d\n", 
+							Thread.currentThread().getName(), i);
+			}
+		});
+		// Thread th = new Thread(new MyThreadRunnable());
 		th.start();   // start thread
 		
 		for (int i = 0; i < Integer.MAX_VALUE; i ++) {
