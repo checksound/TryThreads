@@ -2,21 +2,25 @@
 
 ## Creazione di thread
 
-* Esempio di creazione di thread come sottoclasse della classe `java.lang.Thread`: [trythreads.simple.MyThread](./src/main/java/trythreads/simple/MyThread.java);
+* Esempio di creazione di thread come sottoclasse della classe `java.lang.Thread`: [trythreads.simple.MyThread](./src/main/java/trythreads/simple/MyThread.java). Script di esecuzione dell'applicazione `runMyThread.bat`;
 * Esempio di crezione di thread tramite implemenentazione dell'interfaccia `java.lang.Runnable`: 
-[trythreads.simple.MyThreadRunnable](./src/main/java/trythreads/simple/MyThreadRunnable.java);
+[trythreads.simple.MyThreadRunnable](./src/main/java/trythreads/simple/MyThreadRunnable.java). Script di esecuzione dell'applicazione `runMyThreadRunnable.bat`;
 
 ## Utilizzo del metodo Thread.join
 
-Il metodo [Thread.join()](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#join) aspetta che il thread abbia finito.
+Il metodo [Thread.join()](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Thread.html#join) aspetta che il thread, su cui è invocato il metodo, abbia finito.
 
-La classe [trythreads.simple.MyThreadWithoutJoin](./src/main/java/trythreads/simple/MyThreadWithoutJoin.java) esecuzione di un thread che esegue l'incremento di un contatore, senza l'utilizzo del metodo `join` per prendere il risultato alla fine dell'esecuzione del thread.
+La classe [trythreads.simple.MyThreadWithoutJoin](./src/main/java/trythreads/simple/MyThreadWithoutJoin.java) esecuzione di un thread che esegue l'incremento di un contatore, senza l'utilizzo del metodo `join` per prendere il risultato alla fine dell'esecuzione del thread; Script di esecuzione dell'applicazione `runMyThreadWithouJoin.bat`.
 
 La classe [trythreads.simple.MyThreadWithJoin](./src/main/java/trythreads/simple/MyThreadWithJoin.java) esecuzione di un thread che esegue l'incremento di un contatore, mentre il main invocando il metodo `join` del thread aspetta il termine dell'esecuzione del thread.
 
-Esempio di utilizzo delle primitive dei thread: `join()`, `sleep()`, `isAlive()`, `interrupt()`: [trythreads.simple.SimpleThreads](./src/main/java/trythreads/simple/SimpleThreads.java).
+## Interruzione dei thread
 
-Vedi differenza per il semplice utilizzo di `Thread.sleeep()`: [trythreads.simple.SleepMessages](./src/main/java/trythreads/simple/SleepMessages.java).
+Il metodo `interrupt` può essere utilizzato per richiedere il termine di un thread.
+
+Esempio di utilizzo delle primitive dei thread: `join()`, `sleep()`, `isAlive()`, `interrupt()`: [trythreads.simple.SimpleThreads](./src/main/java/trythreads/simple/SimpleThreads.java); script di esecuzione dell'applicazione `runSleepMessage.bat [<NUM_SECONDI>]`.
+
+Vedi differenza per il semplice utilizzo di `Thread.sleeep()`: [trythreads.simple.SleepMessages](./src/main/java/trythreads/simple/SleepMessages.java); script di lancio dell'applicazione .
 
 ## Animazione
 
@@ -57,12 +61,10 @@ Rendiamo l'esempio della palla che rimbalza più responsive eseguendo il codice 
 
 Esempio: [bounceThread.BounceThread](./src/main/java/bounceThread/BounceThread.java)
 
-## Interruzione dei thread
-
-Il metodo `interrupt` può essere utilizzato per richiedere il termine di un thread.
+### Utilizzo di interrupt
 
 Vedi esempio [bounceThread.BounceThreadWithStop](./src/main/java/bounceThread/BounceThreadWithStop.java) con bottone di Stop per terminare i thread in esecuzione.
-         
+
 ## Accesso a variabili condivise
 
 La classe di tipo `Thread` per eseguire gli incrementi è:
