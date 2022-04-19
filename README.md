@@ -59,11 +59,11 @@ Se si manda in esecuzione il programma, la palla si muove, ma prende il controll
 
 Rendiamo l'esempio della palla che rimbalza più responsive eseguendo il codice che muove la palla in un thread separato. Infatti, così siamo in grado di eseguire il lancio di più palle, ognuna mossa dal proprio thread. In aggiunta, il thread di _dispatch degli eventi_ continuerà l'esecuzione in parallelo, occupandosi di gestire gli eventi della user interface. In questo modo dato che  ogni thread viene eseguito 'contemporaneamente', anche il thread che gestisce l'_event dipatch_, ha l'opportunità di accorgersi che l'utente clicca sul bottone _Close_ mentre le palle stanno rimbalzando. 
 
-Esempio: [bounceThread.BounceThread](./src/main/java/bounceThread/BounceThread.java). Lo script di esecuzione dell'applicazione è `runBounceThread.bat`.
+Esempio: [bounce.BounceThread](./src/main/java/bounce/BounceThread.java). Lo script di esecuzione dell'applicazione è `runBounceThread.bat`.
 
 ### Utilizzo di interrupt
 
-Vedi esempio [bounceThread.BounceThreadWithStop](./src/main/java/bounceThread/BounceThreadWithStop.java) con bottone di *Stop* per terminare i thread in esecuzione. Lo script di esecuzione dell'applicazione è `runBounceThreadWithStop.bat`.
+Vedi esempio [bounce.BounceThreadWithStop](./src/main/java/bounce/BounceThreadWithStop.java) con bottone di *Stop* per terminare i thread in esecuzione. Lo script di esecuzione dell'applicazione è `runBounceThreadWithStop.bat`.
 
 ## Accesso a variabili condivise
 
@@ -101,7 +101,8 @@ FINISHED Counter UNSAFE, elapsed time: 32 ms
 L'esempio [trythreads.concurrency.TestSafeCounter](./src/main/java/trythreads/concurrency/TestSafeCounter.java) invece utilizza un'implementazione,[trythreads.concurrency.CounterSafe](./src/main/java/trythreads/concurrency/CounterSafe.java), di `trythreads.concurrency.Counter`, con i metodi sincronizzati tramite __syncronized__.
 
 In questo caso, l'esecuzione della classe [trythreads.concurrency.TestSafeCounter](./src/main/java/trythreads/concurrency/TestSafeCounter.java) dà i risultati corretti. L'output di una esecuzione:
-
+
+
 ```
 SUM VALUE: 300.000.000 - SHOULD BE: 300.000.000
 DEFFERENCE: 0 - DIFF: 0,000000 %FINISHED Counter SAFE, elapsed time: 8.453 ms
@@ -132,7 +133,8 @@ FINISHED Counter NOT SYNCHRONIZED, elapsed time: 31 ms
 STARTING COUNTER SYNCHRONIZED
 SUM VALUE: 300.000.000 - SHOULD BE: 300.000.000
 DEFFERENCE: 0 - DIFF: 0,000000 %
-FINISHED Counter SYNCHRONIZED, elapsed time: 8.412 ms````
+FINISHED Counter SYNCHRONIZED, elapsed time: 8.412 ms
+````
 ## Operazioni Atomiche
 
 Infine classe di esempio con l'utilizzo delle operazioni atomiche:

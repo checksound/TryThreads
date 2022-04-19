@@ -1,2 +1,2 @@
 
-mvn compile exec:java -Dexec.mainClass="bounceThread.BounceThread"
+mvn compile exec:java -Dexec.mainClass="bounce.BounceThread"

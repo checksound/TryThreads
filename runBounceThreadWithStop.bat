@@ -1,2 +1,2 @@
 
-mvn compile exec:java -Dexec.mainClass="bounceThread.BounceThreadWithStop"
+mvn compile exec:java -Dexec.mainClass="bounce.BounceThreadWithStop"
