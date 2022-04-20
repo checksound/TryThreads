@@ -1,4 +1,4 @@
-package bounce;
+package bounce.v3;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 /**
  * The frame with panel and buttons.
  */
-public class BounceFrameWithStop extends JFrame
+public class BounceFrame extends JFrame
 {
    private BallComponent comp;
    private List<Thread> listThreads;
@@ -22,7 +22,7 @@ public class BounceFrameWithStop extends JFrame
     * Constructs the frame with the component for showing the bouncing ball and Start and Close
     * buttons
     */
-   public BounceFrameWithStop(List<Thread> listThreads)
+   public BounceFrame(List<Thread> listThreads)
    {
 	  this.listThreads = listThreads;
 	  

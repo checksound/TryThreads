@@ -53,17 +53,17 @@ EventQueue.invokeLater(new Runnable()
          });
 ````
 
-Esempio della palla che rimbalza [bounce.Bounce](./src/main/java/bounce/Bounce.java); lo script di esecuzione dell'applicazione è `./runBounce.bat`.
+Esempio della palla che rimbalza [bounce.v1.Bounce](./src/main/java/bounce/v1/Bounce.java); lo script di esecuzione dell'applicazione è `./runBounce.bat`.
 
 Se si manda in esecuzione il programma, la palla si muove, ma prende il controllo di tutta l'applicazione. Se si volesse fermare l'applicazione prima che il moto della palla sia finito e si clicca sul pulsate _Close_, la palla continua a muoversi comunque. Non si può interagire con il programma finché la palla non ha terminato di muoversi.
 
 Rendiamo l'esempio della palla che rimbalza più responsive eseguendo il codice che muove la palla in un thread separato. Infatti, così siamo in grado di eseguire il lancio di più palle, ognuna mossa dal proprio thread. In aggiunta, il thread di _dispatch degli eventi_ continuerà l'esecuzione in parallelo, occupandosi di gestire gli eventi della user interface. In questo modo dato che  ogni thread viene eseguito 'contemporaneamente', anche il thread che gestisce l'_event dipatch_, ha l'opportunità di accorgersi che l'utente clicca sul bottone _Close_ mentre le palle stanno rimbalzando. 
 
-Esempio: [bounce.BounceThread](./src/main/java/bounce/BounceThread.java). Lo script di esecuzione dell'applicazione è `runBounceThread.bat`.
+Esempio: [bounce.v2.Bounce](./src/main/java/bounce/v2/Bounce.java). Lo script di esecuzione dell'applicazione è `runBounceThread.bat`.
 
 ### Utilizzo di interrupt
 
-Vedi esempio [bounce.BounceThreadWithStop](./src/main/java/bounce/BounceThreadWithStop.java) con bottone di *Stop* per terminare i thread in esecuzione. Lo script di esecuzione dell'applicazione è `runBounceThreadWithStop.bat`.
+Vedi esempio [bounce.v3.Bounce](./src/main/java/bounce/v3/Bounce.java) con bottone di *Stop* per terminare i thread in esecuzione. Lo script di esecuzione dell'applicazione è `runBounceThreadWithStop.bat`.
 
 ## Accesso a variabili condivise
 
