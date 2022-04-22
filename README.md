@@ -145,3 +145,9 @@ SUM VALUE: 300.000.000 - SHOULD BE: 300.000.000
 DEFFERENCE: 0 - DIFF: 0,000000 %FINISHED Counter ATOMIC, elapsed time: 3.732 ms
 ```
 
+## Esempio 'produttore-consumatore'
+
+Esempio di utilizzo dei metodi `wait()` e `notifyAll()` per implementare [trythreads.prod_cons.MessageBox](./src/main/java/trythreads/prod_cons/MessageBox.java). 
+
+[trythreads.prod_cons.TestMessageBox](./src/main/java/trythreads/prod_cons/TestMessageBox.java) programma d'esempio con un thread produttore e due thread consumatori che si sincronizzano nell'esecuzione utilizzando un oggetto di tipo [trythreads.prod_cons.MessageBox](./src/main/java/trythreads/prod_cons/MessageBox.java).
+
