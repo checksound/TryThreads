@@ -14,6 +14,8 @@ La classe [trythreads.simple.MyThreadWithoutJoin](./src/main/java/trythreads/sim
 
 La classe [trythreads.simple.MyThreadWithJoin](./src/main/java/trythreads/simple/MyThreadWithJoin.java) esecuzione di un thread che esegue l'incremento di un contatore, mentre il main invocando il metodo `join` del thread aspetta il termine dell'esecuzione del thread; Script di esecuzione dell'applicazione `runMyThreadWithJoin.bat`.
 
+La classe [trythreads.simple.MyThreadWithJoinWithTime](./src/main/java/trythreads/simple/MyThreadWithJoinWithTime.java) esecuzione di un thread che esegue l'incremento di un contatore, mentre il main invocando il metodo `join(long timemillis)` del thread aspetta il termine dell'esecuzione del thread o che scada il timeout; Script di esecuzione dell'applicazione `runMyThreadWithJoinWithTime.bat`.
+
 ## Interruzione dei thread
 
 Il metodo `interrupt` può essere utilizzato per richiedere il termine di un thread.

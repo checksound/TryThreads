@@ -1,12 +1,13 @@
 package trythreads.simple;
 
-public class MyThreadWithJoin implements Runnable {
+public class MyThreadWithJoinWithTime implements Runnable {
 
 	private int counter = 0;
 	
 	@Override
 	public void run() {
-		
+
+		// long run
 		for (; counter < Integer.MAX_VALUE; counter ++) {
 			if(counter % 10_000_000 == 0) {
 				try {
@@ -26,24 +27,29 @@ public class MyThreadWithJoin implements Runnable {
 
 	public static void main(String[] args) {
 		
-		Runnable objRunnable = new MyThreadWithJoin();
+		Runnable objRunnable = new MyThreadWithJoinWithTime();
 		Thread th = new Thread(objRunnable);
 		th.start();   // start thread
-
+		
+		System.out.println("WAITING FINISH THREAD");
 		//
 		// int counter = ((MyThread3A) objRunnable).getCounter();
 		// System.out.format("TOTAL: %d\n", counter);
+		
+		// wait for finishing thread
+			while(th.isAlive()) {
+				try {
+					th.join(100);
+					System.out.print(".");
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
 
-		System.out.println("WAITING FINISH THREAD");
-
-		try {
-			// wait for finishing thread
-			th.join();
-			int counter = ((MyThreadWithJoin) objRunnable).getCounter();
+			}
+			System.out.println("");
+			int counter = ((MyThreadWithJoinWithTime) objRunnable).getCounter();
 			System.out.format("TOTAL RESULT COUNTER: %d\n", counter);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+
 		
 	}
 

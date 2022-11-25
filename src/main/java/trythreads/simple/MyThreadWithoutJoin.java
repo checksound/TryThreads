@@ -8,10 +8,17 @@ public class MyThreadWithoutJoin implements Runnable {
 	public void run() {
 		
 		for (; counter < Integer.MAX_VALUE; counter ++) {
-			if(counter % 1_000_000 == 0)
-				System.out.format("In thread: %s - counter: %d\n", 
-						Thread.currentThread().getName(), counter);
+			if(counter % 10_000_000 == 0) {
+				try {
+					Thread.sleep(10);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+
 		}
+
+		System.out.println("FINISHED WORK");
 	}
 	
 	public int getCounter() {
@@ -23,12 +30,6 @@ public class MyThreadWithoutJoin implements Runnable {
 		Runnable objRunnable = new MyThreadWithoutJoin();
 		Thread th = new Thread(objRunnable);
 		th.start();   // start thread
-		
-		for (int i = 0; i < Integer.MAX_VALUE/2; i ++) {
-			if(i % 1_000_000 == 0)
-				System.out.format("In thread: %s - counter: %d\n", 
-						Thread.currentThread().getName(), i);
-		}
 		
 		int counter = ((MyThreadWithoutJoin) objRunnable).getCounter();
 		System.out.format("TOTAL: %d\n", counter);
